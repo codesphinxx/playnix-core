@@ -1,4 +1,4 @@
-import {LoggingConfig} from 'scorenix-types';
+import {LoggingConfig} from 'playnix-types';
 
 export default class Utils
 {

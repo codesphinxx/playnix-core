@@ -1,10 +1,10 @@
-import { ScorenixOptions } from 'scorenix-types';
+import { PlaynixOptions } from 'playnix-types';
 
-export default class ScorenixBaseClient
+export default class PlaynixBaseClient
 {
     constructor()
     {
-        if (!ScorenixBaseClient.singleton)
+        if (!PlaynixBaseClient.singleton)
         {
             /**
              * @private
@@ -18,14 +18,14 @@ export default class ScorenixBaseClient
             this.token = null;
             /**
              * @private
-             * @type {ScorenixOptions}
+             * @type {PlaynixOptions}
              */
             this.options = null;
 
-            ScorenixBaseClient.singleton = this;
+            PlaynixBaseClient.singleton = this;
         }
 
-        return ScorenixBaseClient.singleton;
+        return PlaynixBaseClient.singleton;
     }
 
     get isAuthenticated ()
@@ -35,7 +35,7 @@ export default class ScorenixBaseClient
 
     /**
     * @public
-    * @description Initializes the scorenix session.
+    * @description Initializes the playnix session.
     * @param {String} key
     * @param {Object} options
     * @param {Boolean} options.debug

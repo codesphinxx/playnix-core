@@ -1,4 +1,4 @@
-import { BaseLogClient, Event, Exception, Message, ScorenixOptions } from 'scorenix-types';
+import { BaseLogClient, Event, Exception, Message, PlaynixOptions } from 'playnix-types';
 import Utils from "./utils";
 
 export default class LogClient extends BaseLogClient
@@ -27,7 +27,7 @@ export default class LogClient extends BaseLogClient
 
     /**
     * @public
-    * @description Initializes scorenix's logging client.
+    * @description Initializes playnix's logging client.
     * @param {String} key
     * @param {Object} options
     * @param {Boolean} options.debug

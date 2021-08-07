@@ -28,6 +28,9 @@ export default class PlaynixBaseClient
         return PlaynixBaseClient.singleton;
     }
 
+    /**
+     * @public
+     */
     get isAuthenticated ()
     {
         return false;
@@ -78,4 +81,11 @@ export default class PlaynixBaseClient
      * @description Loads player save data
      */
     loadGameData() {}
+
+    /**
+     * @public
+     * @description Checks player login status
+     * @returns {Object} player ref
+     */
+    getLoginStatus() {}
 }

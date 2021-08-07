@@ -14,19 +14,19 @@ export default class DeviceInformer
     init() {}
 
     /**
-     * Get the device OS
+     * @description Get the device OS
      * @returns {{name:String,version:String}}
      */
     getOS() {}
 
     /**
-    * Get device model details
+    * @description Get device model details
     * @returns {{vendor:String,model:String}}
     */
     getDevice() {}
 
     /**
-    * Get runtine engine - for browser only
+    * @description Get runtine engine - for browser only
     * @returns {{name:String,version:String}}
     */
     getEngine() {}

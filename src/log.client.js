@@ -82,6 +82,7 @@ export default class LogClient extends BaseLogClient
     }
 
     /**
+     * @public
      * @param {Object|Array} data
      */
     setMetaContext(data)
@@ -96,6 +97,7 @@ export default class LogClient extends BaseLogClient
     }
 
     /**
+    * @public
     * @param {String} message the custom message to log
     * @param {Object} data additional data to send(must contains values of string, number, or boolean)
     */
@@ -107,6 +109,7 @@ export default class LogClient extends BaseLogClient
     }
 
     /**
+    * @public
     * @param {String} id event id
     * @param {String} message event message
     * @param {String} action event action
@@ -119,6 +122,7 @@ export default class LogClient extends BaseLogClient
     }
 
     /**
+    * @public
     * @param {Error} error Error object to log.
     * @param {Object} data additional data to send(must contains values of string, number, or boolean)
     */

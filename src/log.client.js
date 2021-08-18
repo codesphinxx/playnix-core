@@ -104,7 +104,7 @@ export default class LogClient extends BaseLogClient
     writeMessage(message)
     {
         let msg = new Message(message);
-        evt = this._populateMessage(evt);
+        this._populateMessage(msg);
         this._commit(msg);
     }
 
@@ -117,7 +117,7 @@ export default class LogClient extends BaseLogClient
     writeEvent(message, id, category)
     {
         let evt = new Event(id, message, category);
-        evt = this._populateMessage(evt);
+        this._populateMessage(evt);
         this._commit(evt);
     }
 
@@ -128,7 +128,6 @@ export default class LogClient extends BaseLogClient
     */
     writeException(error, data)
     {
-        console.log(error);
         if (!error) return;
         
         let ex = this._createException(error);

@@ -112,11 +112,11 @@ export default class LogClient extends BaseLogClient
     * @public
     * @param {String} id event id
     * @param {String} message event message
-    * @param {String} action event action
+    * @param {String} category event action
     */
-    writeEvent(message, id, action)
+    writeEvent(message, id, category)
     {
-        let evt = new Event(id, message, action);
+        let evt = new Event(id, message, category);
         evt = this._populateMessage(evt);
         this._commit(evt);
     }

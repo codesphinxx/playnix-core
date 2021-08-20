@@ -55,48 +55,6 @@ export default class Utils
         return result;
     }
 
-    static primitify(value)
-    {
-        if (typeof value === 'function' || typeof value === 'symbol' || typeof value === 'undefined' || value === null) return {};
-        
-        let result;
-    
-        if (Array.isArray(value))
-        {
-            result = [];
-            for(let i = 0; i < value.length; i++)
-            {
-                let data_type = typeof value[i];
-                if (Utils.PRIMITIVES.indexOf(data_type) != -1)
-                {
-                    result.push(value[i]);
-                } 
-                else if (value[i] instanceof Date)
-                {
-                    result.push(value[i]);
-                }               
-            }
-        }
-        else if (typeof value === 'object')
-        {
-            result = {};
-            for (let key in value)
-            {
-                let data_type = typeof value[key];
-                if (Utils.PRIMITIVES.indexOf(data_type) != -1)
-                {
-                    result[key] = value[key];
-                }
-            }          
-        }
-        else
-        {
-            result = value;
-        }        
-    
-        return result;
-    }
-
     static isLogLevel(value)
     {
         return value ? ([LoggingConfig.LOGS.ERROR,LoggingConfig.LOGS.INFO,LoggingConfig.LOGS.WARN].indexOf(value) !== -1) : false;

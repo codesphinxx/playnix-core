@@ -1,6 +1,6 @@
 {
   "name": "playnix-core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Base implementation of Playnix JavaScript SDKs",
   "license": "BSD-3-Clause",
   "author": {
@@ -20,7 +20,7 @@
     "eslint": "^7.32.0"
   },
   "dependencies": {
-    "playnix-types": "^0.0.6"
+    "playnix-types": "^0.0.7"
   },
   "engines": {
     "node": ">= 6"

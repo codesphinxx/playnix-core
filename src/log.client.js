@@ -134,7 +134,7 @@ export default class LogClient extends BaseLogClient
         ex = this._populateMessage(ex);
         if (data)
         {
-            ex.extra = Utils.primitify(data);
+            ex.extra = JSON.parse(JSON.stringify(data));
         }
         this._commit(ex);
     }

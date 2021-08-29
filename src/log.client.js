@@ -1,4 +1,5 @@
-import { BaseLogClient, Event, Exception, Message, PlaynixOptions } from 'playnix-types';
+import { BaseLogClient, Event, Exception, Message } from 'playnix-types';
+import { PlaynixOptions } from 'playnix-types/index';
 import Utils from "./utils";
 
 export default class LogClient extends BaseLogClient
@@ -29,16 +30,11 @@ export default class LogClient extends BaseLogClient
     * @public
     * @description Initializes playnix's logging client.
     * @param {String} key
-    * @param {Object} options
-    * @param {Boolean} options.debug
-    * @param {String} options.uri
-    * @param {String} options.method
-    * @param {String} options.protocol
-    * @param {String} options.environment
+    * @param {PlaynixOptions} options
     */
-    init(key, options)
-    {
-        super.init(key, options);
+    init(options)
+    {        
+        super.init(options);
         this._xhttp = new XMLHttpRequest();
         this._xhttp.onreadystatechange = this._onreadystatechange.bind(this);
     }

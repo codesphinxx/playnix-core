@@ -1,4 +1,4 @@
-import { PlaynixOptions } from 'playnix-types';
+import { PlaynixOptions } from "playnix-types/index";
 
 export default class PlaynixBaseClient
 {
@@ -6,11 +6,6 @@ export default class PlaynixBaseClient
     {
         if (!PlaynixBaseClient.singleton)
         {
-            /**
-             * @private
-             * @type {String}
-             */
-            this.game = null;
             /**
              * @private
              * @type {String}
@@ -39,26 +34,18 @@ export default class PlaynixBaseClient
     /**
     * @public
     * @description Initializes the playnix session.
-    * @param {String} key
-    * @param {Object} options
-    * @param {Boolean} options.debug
-    * @param {String} options.uri
-    * @param {String} options.method
-    * @param {String} options.protocol
-    * @param {String} options.environment
+    * @param {PlaynixOptions} options
     */
-    init(key, options)
+    init(options)
     {
-        this.game = key;
-        this._setup(key, options);
+        this._setup(options);
     }
 
     /**
      * @protected
-     * @param {String} key 
-     * @param {Object} options 
+     * @param {PlaynixOptions} options 
      */
-    _setup(key, options) {}
+    _setup(options) {}
 
     /**
      * @public

@@ -35,26 +35,72 @@ declare module 'playnix-core/index' {
 
 }
 declare module 'playnix-core/log.client' {
-  /// <reference types="d:/projects/playnix/client/packages/playnix-types/index" />
-  export default class LogClient extends BaseLogClient {
+  export default class LogClient {
       /**
        * @protected
        * @param {Message} message
        */
-      protected _populateMessage(message: Message): Message;
+      protected _populateMessage(message: any): any;
+      /**
+       * @protected
+       * @param {Error} error
+       */
+      protected _createException(error: Error): any;
+      /**
+      * @public
+      * @description Initializes playnix's logging client.
+      * @param {String} key
+      * @param {PlaynixOptions} options
+      */
+      public init(options: any): void;
+      _xhttp: XMLHttpRequest;
       /**
        * @protected
        * @param {import('playnix-core/device.informer').default} informer
        */
       protected registerDeviceInformer(informer: import('playnix-core/device.informer').default): void;
       deviceInformer: import("playnix-core/device.informer").default;
+      /**
+       * @public
+       * @param {String} username
+       */
+      public setAppUser(username: string): void;
+      _user: string;
+      /**
+       * @public
+       * @param {String} version App version info
+       */
+      public setAppVersion(version: string): void;
+      _user_version: string;
+      /**
+       * @public
+       * @param {Object|Array} data
+       */
+      public setMetaContext(data: any | any[]): void;
+      _meta: any;
+      /**
+      * @public
+      * @param {String} message the custom message to log
+      * @param {Object} data additional data to send(must contains values of string, number, or boolean)
+      */
+      public writeMessage(message: string): void;
+      /**
+      * @public
+      * @param {String} id event id
+      * @param {String} message event message
+      * @param {String} category event action
+      */
+      public writeEvent(message: string, id: string, category: string): void;
+      /**
+      * @public
+      * @param {Error} error Error object to log.
+      * @param {Object} data additional data to send(must contains values of string, number, or boolean)
+      */
+      public writeException(error: Error, data: any): void;
   }
-  import { BaseLogClient } from "playnix-types/index";
-  import { Message } from "playnix-types/index";
 
 }
 declare module 'playnix-core/playnix.base' {
-  /// <reference types="d:/projects/playnix/client/packages/playnix-types/index" />
   export default class PlaynixBaseClient {
       /**
        * @private
@@ -75,12 +121,12 @@ declare module 'playnix-core/playnix.base' {
       * @description Initializes the playnix session.
       * @param {PlaynixOptions} options
       */
-      public init(options: typeof PlaynixOptions): void;
+      public init(options: any): void;
       /**
        * @protected
        * @param {PlaynixOptions} options
        */
-      protected _setup(options: typeof PlaynixOptions): void;
+      protected _setup(options: any): void;
       /**
        * @public
        * @description Verifies the user social login access token
@@ -107,7 +153,6 @@ declare module 'playnix-core/playnix.base' {
        */
       public getLoginStatus(): any;
   }
-  import { PlaynixOptions } from "playnix-types/index";
 
 }
 declare module 'playnix-core/utils' {

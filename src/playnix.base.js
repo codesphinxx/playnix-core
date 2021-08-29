@@ -1,4 +1,4 @@
-import { PlaynixOptions } from "playnix-types/index";
+import { PlaynixOptions } from 'playnix-types';
 
 export default class PlaynixBaseClient
 {

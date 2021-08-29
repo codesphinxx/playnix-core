@@ -1,5 +1,4 @@
-import { BaseLogClient, Event, Exception, Message } from 'playnix-types';
-import { PlaynixOptions } from 'playnix-types/index';
+import { BaseLogClient, Event, Exception, Message, PlaynixOptions } from 'playnix-types';
 import Utils from "./utils";
 
 export default class LogClient extends BaseLogClient

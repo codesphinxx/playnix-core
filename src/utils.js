@@ -109,7 +109,7 @@ export default class Utils
      */
     static replaceAll(value, searchValue, replaceValue)
     {
-        if (!value || !searchValue || !replaceValue)
+        if (!value || !searchValue || replaceValue == null || replaceValue == undefined)
             return value;
 
         if (typeof value != 'string' || typeof searchValue != 'string' || typeof replaceValue != 'string')

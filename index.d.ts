@@ -166,6 +166,10 @@ declare module 'playnix-core/utils' {
        * @param {String} value
        */
       static isNullOrEmpty(value: string): boolean;
+      /**
+       * @param {String} value
+       */
+      static replaceAll(value: string, searchValue: any, replaceValue: any): string;
   }
   namespace Utils {
       const PRIMITIVES: string[];

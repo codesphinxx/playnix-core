@@ -103,6 +103,24 @@ export default class Utils
         if (text.length === 0)
             return true;
     }
+
+    /**
+     * @param {String} value 
+     */
+    static replaceAll(value, searchValue, replaceValue)
+    {
+        if (!value || !searchValue || !replaceValue)
+            return value;
+
+        if (typeof value != 'string' || typeof searchValue != 'string' || typeof replaceValue != 'string')
+        {
+            return value;
+        }
+
+        searchValue = searchValue.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+
+        return value.replace(new RegExp(searchValue, 'gi'), replaceValue);
+    }
 }
 
 Utils.PRIMITIVES = ['undefined','boolean','number','string'];
